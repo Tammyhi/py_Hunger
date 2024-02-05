@@ -21,8 +21,6 @@ class Game:
         
     def slowMagprint(self, str):
         print(Fore.LIGHTMAGENTA_EX + str + Style.RESET_ALL)
-        #print(str)
-        #print(Style.RESET_ALL)
         time.sleep(1.5)
 
 
