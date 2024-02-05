@@ -1,5 +1,7 @@
 import time
 import random
+import colorama
+from colorama import Fore, Back, Style 
 class Game:
     def __init__(self, name):
         self.fridge = [" a slice of pepperoni pizza. Drips of oil and strings of cheese flow from your mouth.",
@@ -68,13 +70,17 @@ class Game:
             self.slowprint("It was all an illusion.")
             self.slowprint("You are in control of yourself.")
             self.slowprint("You turn around and walk away from the fridge.")
+            print(Fore.GREEN)
             self.slowprint("Good ending!")
+            print(Style.RESET_ALL + "")
         elif inp == "n":
             self.slowprint("You don't open the fridge.")
             self.slowprint("There is nothing to do.")
             self.slowprint("After waiting around for a moment, the refrigerator begin to fade.")
             self.slowprint("There is no longer a fridge.")
+            print(Fore.BLUE)
             self.slowprint("Neutral ending.")
+            print(Style.RESET_ALL + "")
         else:
             self.slowprint("You don't want to eat from the fridge anymore, but you continue to do so anyways.")
             self.slowprint("You lick every last drop of ice cream and every last crumb of dessert.")
@@ -87,14 +93,17 @@ class Game:
             self.slowprint(self.name + " tastes like chicken meat.")
             self.slowprint("So delicious!")
             for i in range(0,11):
-                print("MORE!")
+                print(Fore.RED + "MORE!")
                 if(i < 6):
                     time.sleep(0.3)
                 else:
                     time.sleep(0.1)
+            print(Style.RESET_ALL)
             time.sleep(2)
             self.slowprint(self.name + " has been eaten.")
+            print(Fore.RED)
             self.slowprint("Bad ending.")
+            print(Style.RESET_ALL + "")
             
 YO = Game("placeholder")
 YO.story()
