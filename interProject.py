@@ -66,7 +66,7 @@ class Game:
             if(self.hunger == 10):
                 self.endGame("b")
         else:
-            print("You resisted the urge to eat.")
+            self.slowprint("You resisted the urge to eat.")
             self.hunger -= 1
             if(self.hunger == 0):
                 self.endGame("g")
