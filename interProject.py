@@ -19,11 +19,18 @@ class Game:
         print(str)
         time.sleep(1.5)
         
+    def slowMagprint(self, str):
+        print(Fore.LIGHTMAGENTA_EX + str + Style.RESET_ALL)
+        #print(str)
+        #print(Style.RESET_ALL)
+        time.sleep(1.5)
+
+
     def story(self):
         self.slowprint("You, " + self.name + ", are standing in front of a refrigerator.")
         self.slowprint("There is nothing else around you.")
         self.slowprint("Your stomach growls.")
-        self.slowprint("You are hungry.")
+        self.slowMagprint("You are hungry.")
         self.slowprint("Open the fridge?")
         if self.prompt("YN") == 0:
             self.endGame("n")
@@ -31,7 +38,7 @@ class Game:
             self.slowprint("The frige is filled with pepperoni pizza, a large tub of ice cream, a huge party-sized cake, a cabinet full of chocolate chip cookies and another cabinet stuffed with sugar crusted blueberry muffins.")
             self.slowprint("The more you look at the food, the more hungry you get.")
             while(self.hunger != 10  and self.hunger != 0):
-                self.slowprint("Eat something?")
+                self.slowMagprint("Eat something?")
                 self.prompt("Eat")
 
     def prompt(self, type):
@@ -54,7 +61,7 @@ class Game:
 
     def eat(self, inp):
         if(inp == "e"):
-            self.slowprint("You decided to eat" + self.fridge[random.randrange(0,4)])
+            self.slowMagprint("You decided to eat" + self.fridge[random.randrange(0,4)])
             self.hunger += 1
             if(self.hunger == 10):
                 self.endGame("b")
@@ -85,14 +92,14 @@ class Game:
             self.slowprint("You don't want to eat from the fridge anymore, but you continue to do so anyways.")
             self.slowprint("You lick every last drop of ice cream and every last crumb of dessert.")
             self.slowprint("There is nothing left in the fridge.")
-            self.slowprint("A gaping feeling in your chest makes you uncomfortable.")
+            self.slowMagprint("A gaping feeling in your chest makes you uncomfortable.")
             self.slowprint("You've eaten so much. Surely you're not hungry anymore?")
-            self.slowprint("Yet, you just can't stop thinking about eating.")
+            self.slowMagprint("Yet, you just can't stop thinking about eating.")
             self.slowprint("Your stomach grumbles. It howls for MORE.")
             self.slowprint("You eat your right pinky finger.")
             self.slowprint(self.name + " tastes like chicken meat.")
-            self.slowprint("So delicious!")
-            for i in range(0,11):
+            self.slowMagprint("So delicious!")
+            for i in range(0,21):
                 print(Fore.RED + "MORE!")
                 if(i < 6):
                     time.sleep(0.3)
