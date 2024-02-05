@@ -77,13 +77,13 @@ class Game:
             self.slowprint("It was all an illusion.")
             self.slowprint("You are in control of yourself.")
             self.slowprint("You turn around and walk away from the fridge.")
-            self.slowprint(Fore.GREEN  + "Good ending!" + Style.RESET_ALL)
+            self.slowprint(Fore.GREEN  + Back.LIGHTWHITE_EX + "Good ending!" + Style.RESET_ALL)
         elif inp == "n":
             self.slowprint("You don't open the fridge.")
             self.slowprint("There is nothing to do.")
             self.slowprint("After waiting around for a moment, the refrigerator begin to fade.")
             self.slowprint("There is no longer a fridge.")
-            self.slowprint(Fore.BLUE + "Neutral ending." + Style.RESET_ALL)
+            self.slowprint(Fore.BLUE + Back.LIGHTBLACK_EX + "Neutral ending." + Style.RESET_ALL)
         else:
             self.slowprint("You don't want to eat from the fridge anymore, but you continue to do so anyways.")
             self.slowprint("You lick every last drop of ice cream and every last crumb of dessert.")
@@ -104,8 +104,7 @@ class Game:
             print(Style.RESET_ALL)
             time.sleep(2)
             self.slowprint(self.name + " has been eaten.")
-            #print(Fore.RED)
-            self.slowprint(Fore.RED + "Bad ending." + Style.RESET_ALL)
+            self.slowprint(Fore.RED + Back.BLACK + "Bad ending." + Style.RESET_ALL)
             
 YO = Game("placeholder")
 YO.story()
